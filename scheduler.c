@@ -6,11 +6,11 @@
 struct node {
    int pid;
    int arrival;
-	 int burst;
-	 int totalBurst;
-	 int firstRun;
-	 struct node* next;
-	 struct node* prev;
+   int burst;
+   int totalBurst;
+   int firstRun;
+   struct node* next;
+   struct node* prev;
 };
 struct node* head = NULL;
 
@@ -151,7 +151,7 @@ void utilizeCpuSRTF(struct node* process) {
       }
   		
       updateSystemTime(process);
- 	    checkProcessArrived();
+      checkProcessArrived();
    }
 }
 
@@ -187,33 +187,33 @@ void implementScheduler(int algorithm, int quantum) {
    //
    while(currentProcesses > 0) {
       waitForProcess();
-	    current = head;
+      current = head;
 
       if(current->burst > 0 && current != NULL) {
- 			   switch(algorithm) {
-		        case 1  :
-		           utilizeCpuFCFS(current);
-		           break;
-  			    case 2  :
-	             utilizeCpuRoundRobin(current, quantum);
-	             break;
-  			    case 3  :
-	             utilizeCpuSRTF(current);
+         switch(algorithm) {
+            case 1  :
+               utilizeCpuFCFS(current);
+	       break;
+            case 2  :
+	       utilizeCpuRoundRobin(current, quantum);
+	       break;
+  	    case 3  :
+	       utilizeCpuSRTF(current);
                break;
             default :
                printf("\nScheduling algorithm unavailable.");
                exit(1);
          }
-  		}
+      }
   		
-  		// Checks if process finished its task.
-  		//
-  		if(current->burst <= 0) {
-  		    startTerminationProcess(current);
-  		}
-  		else {
-  		    head = current->next;
-  		}
+      // Checks if process finished its task.
+      //
+      if(current->burst <= 0) {
+         startTerminationProcess(current);
+      }
+      else {
+         head = current->next;
+      }
    }
 }
 
@@ -238,8 +238,7 @@ void recordFirstRun(struct node* process) {
 
 /* Updates system time by the same unit of process burst. */
 void updateSystemTime(struct node* process) {
-   printf("\n<system time%s %d> process     %d is running", 
-          padding(), systemTime, process->pid);
+   printf("\n<system time%s %d> process     %d is running", padding(), systemTime, process->pid);
    systemTime++;
    process->burst--;
 }
@@ -266,33 +265,32 @@ void gatherProcessTimeData(struct node* process) {
 
 /* Informs of a completed process. */
 void finishedProcessFeedback(struct node* process) {
-   printf("\n<system time%s %d> process     %d is finished.....", 
-	        padding(), systemTime, process->pid);    
+   printf("\n<system time%s %d> process     %d is finished.....", padding(), systemTime, process->pid);    
 }
 
 /* Schedules processes into the back of the ready queue. */
 void scheduleReadyQueue(int pid, int arrival, int burst) {
    struct node* node;
-	 node = (struct node*)malloc(sizeof(struct node));
-	 node->pid = pid;
-	 node->arrival = arrival;
-	 node->burst = burst;
-	 node->totalBurst = burst;
-	 node->firstRun = -1;  // -1 signifies process hasn't had a first run.
+   node = (struct node*)malloc(sizeof(struct node));
+   node->pid = pid;
+   node->arrival = arrival;
+   node->burst = burst;
+   node->totalBurst = burst;
+   node->firstRun = -1;  // -1 signifies process hasn't had a first run.
 
-	 if (head == NULL) {
+   if (head == NULL) {
       node->next = node;
-		  node->prev = node;
-		  head = node;
-	 }
-	 else {   // Add to back of queue.
-	    struct node* current;
-	    current = head;
+      node->prev = node;
+      head = node;
+   }
+   else {   // Add to back of queue.
+      struct node* current;
+      current = head;
 	    
-	    node->next = current;
-	    node->prev = current->prev;
-	    current->prev->next = node;
-	    current->prev = node;
+      node->next = current;
+      node->prev = current->prev;
+      current->prev->next = node;
+      current->prev = node;
    }
 }
 
@@ -323,8 +321,7 @@ char* padding() {
 
 /* Informs of any downtime the scheduler comes across. */
 void processDowntime() {
-   printf("\n<system time%s %d> No process is currently running.....",
-         padding(), systemTime);
+   printf("\n<system time%s %d> No process is currently running.....", padding(), systemTime);
                                                     
    // System time keeps running even during downtime.
    //
@@ -367,16 +364,16 @@ void terminateProcess(struct node* node) {
    //
    if(node->pid == node->next->pid) {
       free(node);
-		  head = NULL;
-	 }
-	 // If the node being removed is the head.
-	 //
-	 else if(node->pid == head->pid) {
-	    node->prev->next = node->next;
-		  node->next->prev = node->prev;
-		  head = node->next;
-		  free(node);
-	 }
+      head = NULL;
+   }
+   // If the node being removed is the head.
+   //
+   else if(node->pid == head->pid) {
+      node->prev->next = node->next;
+      node->next->prev = node->prev;
+      head = node->next;
+      free(node);
+   }
 }
 
 void calculateAvgCpuUsage() {
@@ -403,8 +400,7 @@ void calculateAvgTurnaroundTime() {
 }
 
 void displayCompletion() {
-   printf("\n<system time%s %d> All processes finished ..................\n", 
-	        padding(), systemTime);
+   printf("\n<system time%s %d> All processes finished ..................\n", padding(), systemTime);
    displayLineSeparator();
 }
 
