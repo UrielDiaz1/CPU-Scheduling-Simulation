@@ -1,0 +1,184 @@
+[udiazquintero@ecs-pa-coding1 asgmt2]$ ./proj2 input.1 FCFS
+
+============================================================
+Scheduling algorithm: FCFS
+Total 6 tasks are read from input.1.
+============================================================
+<system time      0> process     1 is running
+<system time      1> process     1 is running
+<system time      2> process     1 is running
+<system time      3> process     1 is running
+<system time      4> process     1 is running
+<system time      5> process     1 is running
+<system time      6> process     1 is running
+<system time      7> process     1 is running
+<system time      8> process     1 is running
+<system time      9> process     1 is running
+<system time     10> process     1 is finished.....
+<system time     10> process     2 is running
+<system time     11> process     2 is running
+<system time     12> process     2 is running
+<system time     13> process     2 is running
+<system time     14> process     2 is running
+<system time     15> process     2 is running
+<system time     16> process     2 is running
+<system time     17> process     2 is running
+<system time     18> process     2 is running
+<system time     19> process     2 is finished.....
+<system time     19> process     3 is running
+<system time     20> process     3 is running
+<system time     21> process     3 is running
+<system time     22> process     3 is running
+<system time     23> process     3 is running
+<system time     24> process     3 is finished.....
+<system time     24> process     4 is running
+<system time     25> process     4 is running
+<system time     26> process     4 is running
+<system time     27> process     4 is running
+<system time     28> process     4 is finished.....
+<system time     28> process     5 is running
+<system time     29> process     5 is running
+<system time     30> process     5 is running
+<system time     31> process     5 is running
+<system time     32> process     5 is running
+<system time     33> process     5 is running
+<system time     34> process     5 is finished.....
+<system time     34> process     6 is running
+<system time     35> process     6 is running
+<system time     36> process     6 is running
+<system time     37> process     6 is running
+<system time     38> process     6 is running
+<system time     39> process     6 is running
+<system time     40> process     6 is running
+<system time     41> process     6 is finished.....
+<system time     41> All processes finished ..................
+
+============================================================
+Average CPU usage      : 100.00 %
+Average Waiting Time   : 14.17
+Average Response Time  : 14.17
+Average Turnaround Time: 21.00
+============================================================
+[udiazquintero@ecs-pa-coding1 asgmt2]$ ./proj2 input.1 RR 2
+
+============================================================
+Scheduling algorithm: RR (quantum time 2)
+Total 6 tasks are read from input.1.
+============================================================
+<system time      0> process     1 is running
+<system time      1> process     1 is running
+<system time      2> process     2 is running
+<system time      3> process     2 is running
+<system time      4> process     1 is running
+<system time      5> process     1 is running
+<system time      6> process     3 is running
+<system time      7> process     3 is running
+<system time      8> process     2 is running
+<system time      9> process     2 is running
+<system time     10> process     1 is running
+<system time     11> process     1 is running
+<system time     12> process     4 is running
+<system time     13> process     4 is running
+<system time     14> process     3 is running
+<system time     15> process     3 is running
+<system time     16> process     5 is running
+<system time     17> process     5 is running
+<system time     18> process     6 is running
+<system time     19> process     6 is running
+<system time     20> process     2 is running
+<system time     21> process     2 is running
+<system time     22> process     1 is running
+<system time     23> process     1 is running
+<system time     24> process     4 is running
+<system time     25> process     4 is running
+<system time     26> process     4 is finished.....
+<system time     26> process     3 is running
+<system time     27> process     3 is finished.....
+<system time     27> process     5 is running
+<system time     28> process     5 is running
+<system time     29> process     6 is running
+<system time     30> process     6 is running
+<system time     31> process     2 is running
+<system time     32> process     2 is running
+<system time     33> process     1 is running
+<system time     34> process     1 is running
+<system time     35> process     1 is finished.....
+<system time     35> process     5 is running
+<system time     36> process     5 is running
+<system time     37> process     5 is finished.....
+<system time     37> process     6 is running
+<system time     38> process     6 is running
+<system time     39> process     2 is running
+<system time     40> process     2 is finished.....
+<system time     40> process     6 is running
+<system time     41> process     6 is finished.....
+<system time     41> All processes finished ..................
+
+============================================================
+Average CPU usage      : 100.00 %
+Average Waiting Time   : 22.50
+Average Response Time  : 4.00
+Average Turnaround Time: 29.33
+============================================================
+[udiazquintero@ecs-pa-coding1 asgmt2]$ ./proj2 input.1 SRTF
+
+============================================================
+Scheduling algorithm: SRTF
+Total 6 tasks are read from input.1.
+============================================================
+<system time      0> process     2 is running
+<system time      1> process     2 is running
+<system time      2> process     2 is running
+<system time      3> process     3 is running
+<system time      4> process     3 is running
+<system time      5> process     3 is running
+<system time      6> process     3 is running
+<system time      7> process     3 is running
+<system time      8> process     3 is finished.....
+<system time      8> process     4 is running
+<system time      9> process     4 is running
+<system time     10> process     4 is running
+<system time     11> process     4 is running
+<system time     12> process     4 is finished.....
+<system time     12> process     2 is running
+<system time     13> process     2 is running
+<system time     14> process     2 is running
+<system time     15> process     2 is running
+<system time     16> process     2 is running
+<system time     17> process     2 is running
+<system time     18> process     2 is finished.....
+<system time     18> process     5 is running
+<system time     19> process     5 is running
+<system time     20> process     5 is running
+<system time     21> process     5 is running
+<system time     22> process     5 is running
+<system time     23> process     5 is running
+<system time     24> process     5 is finished.....
+<system time     24> process     6 is running
+<system time     25> process     6 is running
+<system time     26> process     6 is running
+<system time     27> process     6 is running
+<system time     28> process     6 is running
+<system time     29> process     6 is running
+<system time     30> process     6 is running
+<system time     31> process     6 is finished.....
+<system time     31> process     1 is running
+<system time     32> process     1 is running
+<system time     33> process     1 is running
+<system time     34> process     1 is running
+<system time     35> process     1 is running
+<system time     36> process     1 is running
+<system time     37> process     1 is running
+<system time     38> process     1 is running
+<system time     39> process     1 is running
+<system time     40> process     1 is running
+<system time     41> process     1 is finished.....
+<system time     41> All processes finished ..................
+
+============================================================
+Average CPU usage      : 100.00 %
+Average Waiting Time   : 10.50
+Average Response Time  : 9.00
+Average Turnaround Time: 17.33
+============================================================
+
