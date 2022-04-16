@@ -6,7 +6,7 @@
 
 1. Input File Format & Requirements
 	A. The file is expected to have three columns of data.
-		a. The first column is of process PIDs
+		a. The first column is of process PIDs.
 
 		b. The second column is of the process
 		   arrival times.
