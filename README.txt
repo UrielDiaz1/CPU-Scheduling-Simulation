@@ -1,6 +1,6 @@
 ##################################################################
 ##							        ##
-##         How to use the Secheduling Simulator program         ##
+##         How to use the Secheduling Simulator Program         ##
 ##							        ##
 ##################################################################
 
